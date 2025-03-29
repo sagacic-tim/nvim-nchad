@@ -18,10 +18,18 @@ return {
   { "nvim-tree/nvim-web-devicons", lazy = true },
 
   {
-   "nvchad/ui",
-      config = function()
-        require "nvchad" 
-      end
+    "nvchad/ui",
+    config = function()
+      require "nvchad"
+    end
+  },
+
+  {
+    "echasnovski/mini.nvim",
+    lazy = true,
+    config = function()
+      require("mini.icons")  -- Ensure this loads the icons module
+    end
   },
 
   {
@@ -30,6 +38,15 @@ return {
     build = function()
       require("base46").load_all_highlights()
     end,
+  },
+
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = function()
+      require("configs.toggleterm")  -- Your configuration file
+    end,
+    keys = { "<C-\\>" },  -- This will load the plugin when you press Ctrl + \
   },
 
   "nvchad/volt",
