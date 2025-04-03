@@ -49,6 +49,21 @@ return {
     keys = { "<C-\\>" },  -- This will load the plugin when you press Ctrl + \
   },
 
+  {
+    "nvim-treesitter/nvim-treesitter",  -- The plugin
+    run = ":TSUpdate",  -- Command to update parsers after installation
+    config = function()
+      require("plugins.nvim-treesitter")  -- Load your treesitter configuration
+    end,
+    -- Optionally, you can specify any lazy loading conditions here
+  },
+
+  {
+    "nvim-treesitter/playground",
+    cmd = "TSPlaygroundToggle", -- This will load the plugin lazily when the command is run
+  },
+
+
   "nvchad/volt",
 
   -- optional, needed for theme switcher

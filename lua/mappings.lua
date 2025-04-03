@@ -11,8 +11,7 @@ map("i", "jk", "<ESC>")
 vim.api.nvim_set_keymap('n', '<C-1>', '<cmd>ToggleTerm direction=vertical<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-2>', '<cmd>ToggleTerm direction=horizontal<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-3>', '<cmd>ToggleTerm direction=float<CR>', { noremap = true, silent = true })
---
--- -- Optionally, set the default open mapping for ToggleTerm if not already set
--- vim.api.nvim_set_keymap('n', '<C-\\>', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>l', '<cmd>TSPlaygroundToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>io', ':tabnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>iu', ':tabprev<CR>', { noremap = true, silent = true })
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
