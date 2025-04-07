@@ -1,5 +1,8 @@
 require "nvchad.mappings"
 
+-- Load your custom comment functions
+local comments = require("configs.comments")
+
 -- add yours here
 
 local map = vim.keymap.set
@@ -12,6 +15,15 @@ vim.api.nvim_set_keymap('n', '<C-1>', '<cmd>ToggleTerm direction=vertical<CR>', 
 vim.api.nvim_set_keymap('n', '<C-2>', '<cmd>ToggleTerm direction=horizontal<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-3>', '<cmd>ToggleTerm direction=float<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>l', '<cmd>TSPlaygroundToggle<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>io', ':tabnext<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>iu', ':tabprev<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>./', ':tabnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>.,', ':tabprev<CR>', { noremap = true, silent = true })
+
+-- Create user commands and key mappings for commenting
+vim.api.nvim_create_user_command("CommentOut", comments.comment_out, { range = true })
+vim.keymap.set("v", "<leader>co", ":CommentOut<CR>")
+vim.keymap.set("n", "<leader>co", ":CommentOut<CR>")
+
+vim.api.nvim_create_user_command("Uncomment", comments.uncomment, { range = true })
+vim.keymap.set("v", "<leader>uc", ":Uncomment<CR>")
+vim.keymap.set("n", "<leader>uc", ":Uncomment<CR>")
 

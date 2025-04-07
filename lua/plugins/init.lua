@@ -63,7 +63,6 @@ return {
     cmd = "TSPlaygroundToggle", -- This will load the plugin lazily when the command is run
   },
 
-
   "nvchad/volt",
 
   -- optional, needed for theme switcher
