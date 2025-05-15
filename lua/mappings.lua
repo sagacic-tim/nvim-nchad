@@ -27,3 +27,8 @@ vim.api.nvim_create_user_command("Uncomment", comments.uncomment, { range = true
 vim.keymap.set("v", "<leader>uc", ":Uncomment<CR>")
 vim.keymap.set("n", "<leader>uc", ":Uncomment<CR>")
 
+-- Yank to clipboard in normal and visual modes:
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>Y", '"+y$', { desc = "Yank until EOL to clipboard" })
+
+vim.keymap.set("i", "<C-v>", "<C-r>+", { noremap = true, silent = true, desc = "Paste from clipboard" })

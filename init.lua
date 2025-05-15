@@ -35,6 +35,10 @@ require("lazy").setup({
 -- for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
 --   dofile(vim.g.base46_cache .. v)
 -- end
+--
+
+-- ~/.config/nvim/init.lua or your appropriate configuration file
+require'lspconfig'.ts_ls.setup{}
 
 require "options"
 require "nvchad.autocmds"
